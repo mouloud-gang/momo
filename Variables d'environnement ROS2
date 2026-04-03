@@ -1,0 +1,42 @@
+export ROS_DOMAIN_ID=0
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+export RCUTILS_COLORIZED_OUTPUT=0
+export LANG=en_US.UTF-8
+printenv | grep -i ros
+-----on ouvre:
+nano ~/.bashrc
+----apres on utilise:
+source /opt/ros/jazzy/setup.bash
+source ~/ros2_ws/install/setup.bash
+export ROS_DOMAIN_ID=0
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+export RCUTILS_COLORIZED_OUTPUT=0
+alias cb='cd ~/ros2_ws && colcon build --symlink-install'
+alias cs='source ~/ros2_ws/install/setup.bash'
+alias cbs='cb && cs'
+----sauver et recharger le terminal avec source ~/.bashrc
+----avec le terminal:
+ros2 run demo_nodes_cpp talker
+----on ultilise deux terminal:
+----le 1er:
+[INFO] [1775220767.059182240] [talker]: Publishing: 'Hello World: 1'
+[INFO] [1775220768.060253511] [talker]: Publishing: 'Hello World: 2'
+[INFO] [1775220769.054315301] [talker]: Publishing: 'Hello World: 3'
+[INFO] [1775220770.054696683] [talker]: Publishing: 'Hello World: 4'
+[INFO] [1775220771.054972254] [talker]: Publishing: 'Hello World: 5'
+[INFO] [1775220772.071974368] [talker]: Publishing: 'Hello World: 6'
+[INFO] [1775220773.054570623] [talker]: Publishing: 'Hello World: 7'
+[INFO] [1775220774.053617856] [talker]: Publishing: 'Hello World: 8'
+[INFO] [1775220775.054163897] [talker]: Publishing: 'Hello World: 9'
+....
+----le 2eme avec demo_node_cpp listener:
+[INFO] [1775220776.054900848] [listener]: I heard: [Hello World: 10]
+[INFO] [1775220777.055597549] [listener]: I heard: [Hello World: 11]
+[INFO] [1775220778.054247433] [listener]: I heard: [Hello World: 12]
+[INFO] [1775220779.055439121] [listener]: I heard: [Hello World: 13]
+[INFO] [1775220780.054506083] [listener]: I heard: [Hello World: 14]
+[INFO] [1775220781.054354577] [listener]: I heard: [Hello World: 15]
+[INFO] [1775220782.054308907] [listener]: I heard: [Hello World: 16]
+[INFO] [1775220783.055642075] [listener]: I heard: [Hello World: 17]
+
+
