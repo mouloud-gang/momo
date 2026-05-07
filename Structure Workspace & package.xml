@@ -1,0 +1,16 @@
+source /opt/ros/jazzy/setup.bash
+source ~/ros2_ws/install/setup.bash
+cd ~/ros2_ws
+ls
+sudo apt install tree
+tree -L 3
+nano src/my_pubsub_pkg/package.xml
+#on ajoute:
+ <depend>rclpy</depend>
+ <depend>std_msgs</depend>
+colcon build
+source install/setup.bash
+ros2 pkg executables my_pubsub_pkg
+#on trouve:
+my_pubsub_pkg publisher
+my_pubsub_pkg subscribe
